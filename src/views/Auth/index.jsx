@@ -1,9 +1,6 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { Field, reduxForm, startSubmit, stopSubmit } from 'redux-form'
 import { required, email } from 'redux-form-validators'
-// import Button from 'react-bootstrap/Button'
-// import { Form } from 'react-bootstrap'
 import { BInput } from '../../components/reduxForm/bootstrap/Input'
 import { SubmitBtn } from "../../components/reduxForm/bootstrap/SubmitBtn";
 
