@@ -1,0 +1,14 @@
+.auth-wrapper {
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .auth-card {
+        max-width: 500px;
+        height: auto;
+        width: 100%;
+        background-color: #fff;
+        margin: 20px;
+    }
+}
