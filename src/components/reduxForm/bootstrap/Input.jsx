@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, FormControl } from 'react-bootstrap'
 
 
-export  class BInput extends React.PureComponent {
+export class BInput extends React.PureComponent {
 
     /**
      * List of Bootstrap field props
@@ -37,7 +37,7 @@ export  class BInput extends React.PureComponent {
 
     prepareFieldProps() {
 
-        const { input, meta: { form, valid, touched }, id, input: { name }, onChange } = this.props
+        const { input, meta: { valid, touched }, onChange } = this.props
         let otherProps = {}
 
         /** 

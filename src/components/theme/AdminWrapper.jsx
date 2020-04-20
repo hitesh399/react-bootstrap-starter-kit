@@ -1,25 +1,22 @@
 import React from "react";
-import history from "../../history";
+import PropTypes from 'prop-types';
+import classNames from 'classnames'
+import { connect } from "react-redux";
 
-export default class AdminThemeWrapper extends React.Component {
-  componentDidMount() {
-    if (!this.isUserLogin()) {
-      this.IfUnauthenticateUser();
-    }
-  }
-  
-  isUserLogin() {
-    return true;
-  }
-  IfUnauthenticateUser() {
-    history.push("/");
-  }
-  componentDidUpdate() {
-    if (!this.isUserLogin()) {
-      this.IfUnauthenticateUser();
-    }
+class AdminTheme extends React.Component {
+  static propTypes = {
+    sidebarStatus: PropTypes.oneOf(['open', 'close', 'mini'])
   }
   render() {
-    return this.props.children;
+    const { sidebarStatus } = this.props
+    return <div className={classNames({ 'admin-wrapper': true, [`sidebar-${sidebarStatus}`]: true })}>
+      {this.props.children}
+    </div>
   }
 }
+export const AdminThemeWrapper = connect(function (state) {
+  return {
+    sidebarStatus: state.sidebar.status
+  }
+})(AdminTheme)
+

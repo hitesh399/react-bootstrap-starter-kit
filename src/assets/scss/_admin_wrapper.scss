@@ -1,0 +1,23 @@
+.admin-wrapper {
+    height: 100vh;
+    &.sidebar-open {
+        .main-content {
+            margin-left: 243px;
+        }
+        .main-sidebar {
+            margin-left: 0;
+        }
+    }
+    &.sidebar-mini {
+        .main-content {
+            margin-left: 60px;
+        }
+        .main-sidebar {
+            margin-left: 0;
+        }
+    }
+    .main-content {
+        margin-left: 0;
+        transition: all 150ms linear;
+    }
+}

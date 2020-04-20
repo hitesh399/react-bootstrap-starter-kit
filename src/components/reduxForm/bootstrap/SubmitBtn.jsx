@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Spinner } from 'react-bootstrap'
 import PropTypes from 'prop-types';
-import { FormName, isSubmitting } from 'redux-form'
+import { FormName } from 'redux-form'
 import { connect } from 'react-redux';
 import helper from 'js-object-helper'
 
