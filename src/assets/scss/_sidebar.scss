@@ -1,18 +1,173 @@
 .main-sidebar {
-    width: 243px;
-    margin-left: -243px;
+    width: $sidebar-width;
+    margin-left: -$sidebar-width;
     float: left;
     min-height: 100vh;
-    background-color: #ccc;
+    background-color: $sidebar-back-color;
     transition: all 150ms linear;
     position: relative;
+    color: $sidebar-nav-color;
+    &.main-sidebar---close {
+        .sidebar-status-btn {
+            display: none;
+        }
+    }
     &.main-sidebar--mini {
-        width: 60px;
-        margin-left: -60px;
+        width: $sidebar-mini-width;
+        margin-left: -$sidebar-mini-width;
+        .nav-title {
+            display: none;
+        }
+        .sidebar-top {
+            .user-icon {
+                font-size: 20px;
+            }
+        }
+        .sidebar-status-btn {
+            left: 25px;
+        }
+        .main-nav-wrapper {
+            padding: 0;
+            .main-menu {
+                li {
+                    position: relative;
+
+                    &.open {
+                        background-color: #ffffff;
+                        a,
+                        button {
+                            color: $sidebar-back-color;
+                        }
+                    }
+                    button {
+                        text-align: center;
+                    }
+
+                    &.has-children {
+                        // height: auto;
+                        &:hover > .sub-menu-wrapper {
+                            opacity: 1;
+                            transition: opacity 200ms ease-in;
+                            overflow: initial;
+                            width: 200px;
+                            z-index: 9;
+                            .nav-title {
+                                display: block;
+                            }
+                        }
+                        .sub-menu-wrapper {
+                            margin-left: 100%;
+                            height: inherit !important;
+                            position: absolute;
+                            opacity: 0;
+                            width: 0;
+                            transition: opacity 200ms ease-out;
+                            background-color: transparent;
+                            top: 0;
+                            left: 0;
+                            z-index: -1;
+                            .sub-menu {
+                                background-color: $sidebar-back-color;
+
+                                li {
+                                    padding-left: 0;
+                                    text-align: left;
+                                    &.open {
+                                        background-color: transparent;
+                                        & > a,
+                                        button {
+                                            color: #ffffff;
+                                            background: $sidebar-nav-active-color;
+                                        }
+                                    }
+                                    a,
+                                    button {
+                                        color: $sidebar-nav-color;
+                                        text-align: left;
+                                    }
+                                    &.active {
+                                        a,
+                                        button {
+                                            color: #ffffff;
+                                            background: $sidebar-nav-active-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & > li {
+                    text-align: center;
+                }
+            }
+        }
     }
     .sidebar-status-btn {
-        position: absolute;
+        position: fixed;
         bottom: 10px;
-        right: 10px;
+        left: 200px;
+    }
+    .main-nav-wrapper {
+        // padding: 0 10px 10px 10px;
+        .main-menu {
+            li {
+                color: $sidebar-nav-color;
+                border-bottom: 1px solid #2b2b2b;
+                &.has-children {
+                    &.open > .sub-menu-wrapper {
+                        height: auto;
+                        opacity: 1;
+                        transition: opacity 150ms linear;
+                    }
+                    .sub-menu-wrapper {
+                        height: 0;
+                        opacity: 0;
+                        transition: opacity 150ms linear;
+                        overflow: hidden;
+                    }
+                }
+                a:hover > .nav-title {
+                    margin-left: 10px;
+                    transition: margin-left 150ms linear;
+                }
+                &.active {
+                    color: $sidebar-nav-active-color;
+                    a {
+                        color: $sidebar-nav-active-color;
+                    }
+                }
+                &.open {
+                    background-color: $sidebar-nav-open-bg-color;
+                }
+                .nav-title {
+                    margin-left: 5px;
+                }
+                a,
+                button {
+                    color: $sidebar-nav-color;
+                    padding: 8px;
+                    display: block;
+                    text-decoration: none;
+                }
+                button {
+                    width: 100%;
+                    border-radius: 0;
+                    text-align: left;
+                }
+            }
+            .sub-menu li {
+                padding-left: 10px;
+                border-bottom: none;
+                
+            }
+        }
+    }
+
+    .sidebar-top {
+        padding: 20px;
+        .user-icon {
+            font-size: 120px;
+        }
     }
 }

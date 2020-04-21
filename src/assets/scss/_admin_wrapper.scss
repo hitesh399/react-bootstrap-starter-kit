@@ -2,7 +2,7 @@
     height: 100vh;
     &.sidebar-open {
         .main-content {
-            margin-left: 243px;
+            margin-left: $sidebar-width;
         }
         .main-sidebar {
             margin-left: 0;
@@ -10,7 +10,7 @@
     }
     &.sidebar-mini {
         .main-content {
-            margin-left: 60px;
+            margin-left: $sidebar-mini-width;
         }
         .main-sidebar {
             margin-left: 0;

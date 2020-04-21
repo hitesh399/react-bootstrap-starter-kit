@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/scss/index.scss'
 import "./styles.css";
 import "./assets/font/iconic/css/open-iconic-bootstrap.scss"
-
+import "./assets/font/fa/css/all.css"
 import { Switch, Route } from "react-router-dom";
 import { Router } from "react-router";
 

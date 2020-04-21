@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import { HeaderComponent } from "../components/theme/Header";
 import Footer from "../components/theme/Footer";
 import Dashboard from "../views/Admin/Dashboard";
@@ -24,8 +24,16 @@ export function AdminRoutes({ match, history }) {
             <div className="main-content">
                 <HeaderComponent ></HeaderComponent>
                 <div className="p-4">
-                    <Redirect path={match.path} to={`${match.path}/dashboard`} />
-                    <Route path={`${match.path}/dashboard`} component={Dashboard} />
+                    <Switch>
+                        <Route path={`${match.path}/dashboard`} exact component={Dashboard} />
+                        <Route path={`${match.path}/users`} exact component={Dashboard} />
+                        <Route path={`${match.path}/users/create`} exact component={Dashboard} />
+                        <Route path={`${match.path}/users2`} exact component={Dashboard} />
+                        <Route path={`${match.path}/users2/create`} exact component={Dashboard} />
+                        <Route path={`${match.path}/users3`} exact component={Dashboard} />
+                        <Route path={`${match.path}/users3/create`} exact component={Dashboard} />
+                        <Redirect from={match.path} to={`${match.path}/dashboard`} />
+                    </Switch>
                 </div>
                 <Footer />
             </div>
