@@ -1,13 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import configureStore from './store';
-import App from "./App";
-import { Provider } from 'react-redux'
+import App from './App';
+import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { DeviceScreenProvider } from './components/DeviceScreenProvider';
+import { AppModalProvider } from './components/modal/AppModalProvider';
+import { AppModalConsumer } from './components/modal/AppModalConsumer';
 
 ReactDOM.render(
   <Provider store={configureStore()}>
-    <App />
+    <DeviceScreenProvider>
+      <App />
+    </DeviceScreenProvider>
+    <AppModalProvider>
+      <AppModalConsumer />
+    </AppModalProvider>
   </Provider>,
   document.getElementById('root')
 );

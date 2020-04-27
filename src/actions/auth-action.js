@@ -14,7 +14,7 @@ export const getUserProfile = () => {
           payload: { user },
         });
         resolve(user);
-      }, 5000);
+      }, 1000);
     });
   };
 };

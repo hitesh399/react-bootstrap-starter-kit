@@ -20,7 +20,6 @@ export class AdminTheme extends React.PureComponent {
     return !!getCookie('ACCESS-TOKEN');
   }
   fetchUserProfile() {
-    console.log('Call to fetch User Data...');
     const { dispatch, history } = this.props;
     dispatch(getUserProfile())
       .then(() => {
@@ -32,15 +31,14 @@ export class AdminTheme extends React.PureComponent {
       });
   }
 
-  componentWillReceiveProps(newProps) {
-    this.validateUser(newProps);
-  }
-
   logout() {
     deleteCookie('ACCESS-TOKEN');
   }
 
   componentDidMount() {
+    this.validateUser(this.props);
+  }
+  componentDidUpdate(preProp) {
     this.validateUser(this.props);
   }
 
