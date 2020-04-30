@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.42996257.chunk.css",
+    "main.js": "/static/js/main.74cc6195.chunk.js",
+    "main.js.map": "/static/js/main.74cc6195.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.a5b4ddd2.chunk.css": "/static/css/2.a5b4ddd2.chunk.css",
+    "static/js/2.29db361e.chunk.js": "/static/js/2.29db361e.chunk.js",
+    "static/js/2.29db361e.chunk.js.map": "/static/js/2.29db361e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b71bdf652901cd4b0f575c08c6259053.js": "/precache-manifest.b71bdf652901cd4b0f575c08c6259053.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.a5b4ddd2.chunk.css.map": "/static/css/2.a5b4ddd2.chunk.css.map",
+    "static/css/main.42996257.chunk.css.map": "/static/css/main.42996257.chunk.css.map",
+    "static/media/all.css": "/static/media/fa-solid-900.ec763292.svg",
+    "static/media/open-iconic-bootstrap.scss": "/static/media/open-iconic.eca2c267.svg"
+  }
+}

@@ -6,6 +6,7 @@ import { changeSidebarStatus } from '../../actions/sidebar.action';
 import { Button } from 'react-bootstrap';
 import menus from '../../menus/admin.menu.json';
 import { SidebarNavItem } from './SidebarNavItem';
+import { DeviceScreenContext } from '../DeviceScreenProvider';
 
 class Sidebar extends React.PureComponent {
   static propTypes = {
@@ -38,22 +39,29 @@ class Sidebar extends React.PureComponent {
             className="main-menu"
           ></SidebarNavItem>
         </div>
-        <Button
-          variant="link"
-          type="button"
-          className="sidebar-status-btn"
-          onClick={(e) => this.toggleSidebar(e)}
-        >
-          <span
-            className={classNames({
-              oi: true,
-              'oi-chevron-left': sidebarStatus === 'open',
-              'oi-chevron-right': sidebarStatus === 'mini',
-            })}
-            title="menu"
-            aria-hidden="true"
-          ></span>
-        </Button>
+        <DeviceScreenContext.Consumer>
+          {(device) => {
+            if (device.width <= 600) return null
+            return (
+              <Button
+                variant="link"
+                type="button"
+                className="sidebar-status-btn"
+                onClick={(e) => this.toggleSidebar(e)}
+              >
+                <span
+                  className={classNames({
+                    oi: true,
+                    'oi-chevron-left': sidebarStatus === 'open',
+                    'oi-chevron-right': sidebarStatus === 'mini',
+                  })}
+                  title="menu"
+                  aria-hidden="true"
+                ></span>
+              </Button>
+            );
+          }}
+        </DeviceScreenContext.Consumer>
       </div>
     );
   }

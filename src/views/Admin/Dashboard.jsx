@@ -1,6 +1,6 @@
 import React from 'react';
 import { DeviceScreenContext } from '../../components/DeviceScreenProvider';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Col, Row } from 'react-bootstrap';
 import { appModal } from '../../components/modal/AppModalConsumer';
 
 export default class Dashboard extends React.Component {
@@ -28,7 +28,7 @@ export default class Dashboard extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <DeviceScreenContext.Consumer>
           {(device) => (
             <div>
@@ -37,33 +37,40 @@ export default class Dashboard extends React.Component {
             </div>
           )}
         </DeviceScreenContext.Consumer>
-
-        <Button onClick={() => this.confirm()}>Confirm</Button>
-
-        <Button onClick={() => appModal.messageBox('Hello World!')}>
-          Text Message
-        </Button>
-        <Button
-          onClick={() =>
-            appModal.messageBox(
-              <p>
-                Hello <b>World</b> <i>HTML</i> message{' '}
-              </p>
-            )
-          }
-        >
-          HTML Message
-        </Button>
-
-        <Button
-          onClick={() =>
-            appModal.open(TestModalMessage, {
-              centered: true,
-            })
-          }
-        >
-          Nested Modal
-        </Button>
+        <Row>
+          <Col className="mb-2">
+            <Button onClick={() => this.confirm()}>Confirm</Button>
+          </Col>
+          <Col>
+            <Button onClick={() => appModal.messageBox('Hello World!')}>
+              Text Message
+            </Button>
+          </Col>
+          <Col className="mb-2">
+            <Button
+              onClick={() =>
+                appModal.messageBox(
+                  <p>
+                    Hello <b>World</b> <i>HTML</i> message
+                  </p>
+                )
+              }
+            >
+              HTML Message
+            </Button>
+          </Col>
+          <Col className="mb-2"> 
+            <Button
+              onClick={() =>
+                appModal.open(TestModalMessage, {
+                  centered: true,
+                })
+              }
+            >
+              Nested Modal
+            </Button>
+          </Col>
+        </Row>
       </div>
     );
   }

@@ -3,6 +3,7 @@ import { Button, Nav, Navbar } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { changeSidebarStatus } from '../../actions/sidebar.action';
+import { DeviceScreenContext } from '../DeviceScreenProvider';
 export class Header extends React.PureComponent {
   static propTypes = {
     sidebarStatus: PropTypes.oneOf(['open', 'close', 'mini']),
@@ -26,11 +27,18 @@ export class Header extends React.PureComponent {
           <Navbar.Brand href="#home">
             &nbsp; React Bootstrap Starter Kit
           </Navbar.Brand>
-          <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
+          <DeviceScreenContext.Consumer>
+            {(device) => {
+              if (device.width <= 600) return null;
+              return (
+                <Nav className="ml-auto">
+                  <Nav.Link href="#home">Home</Nav.Link>
+                  <Nav.Link href="#features">Features</Nav.Link>
+                  <Nav.Link href="#pricing">Pricing</Nav.Link>
+                </Nav>
+              );
+            }}
+          </DeviceScreenContext.Consumer>
         </Navbar>
       </header>
     );

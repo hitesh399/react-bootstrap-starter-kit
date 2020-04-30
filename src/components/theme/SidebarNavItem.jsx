@@ -3,6 +3,9 @@ import classNames from 'classnames';
 import { Link, useRouteMatch, useLocation } from 'react-router-dom';
 import { guidGenerator } from '../../utils';
 import { Button } from 'react-bootstrap';
+import history from '../../history';
+
+import { deleteCookie } from '../../utils/index';
 
 function checkMatchInChilddren(currentPath, items, checkInKey = 'path') {
   return items.some(
@@ -51,7 +54,6 @@ export function SidebarSingleNavItem({
   }, [sidebarStatus, open]);
 
   const matched = checkMatchInChilddren(location.pathname, _children);
-
   //
   return (
     <li
@@ -160,6 +162,21 @@ export class SidebarNavItem extends React.PureComponent {
             key={`_menu_${item._id}`}
           ></SidebarSingleNavItem>
         ))}
+        {depth === 1 || !depth ? (
+          <li title="Logout">
+            <Link
+              to="#"
+              onClick={() => {
+                deleteCookie('ACCESS-TOKEN');
+                history.push('/');
+              }}
+            >
+              <Space depth={1} />
+              <Icon icon="fa-unlock-alt" />
+              <span className="nav-title">Logout</span>
+            </Link>
+          </li>
+        ) : null}
       </ul>
     );
   }

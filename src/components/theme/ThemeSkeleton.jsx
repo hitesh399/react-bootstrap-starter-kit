@@ -31,8 +31,9 @@ export const ThemeSkeletonComponent = () => (
         <div className="container-sidebar">
           <div className="container-content">
             <div className="header-placeholder">
-              <div className="header-avatar-placeholder strong-shaded"></div>
-              <div className="text-placeholder strong-shaded"></div>
+              <div className="header-avatar-placeholder strong-shaded">
+                <div className="icon-placeholder-small light-shaded"></div>
+              </div>
             </div>
             <div className="items-placeholder">
               <div className="item-placeholder">
@@ -55,9 +56,122 @@ export const ThemeSkeletonComponent = () => (
                 <div className="icon-placeholder-small light-shaded"></div>
                 <div className="text-placeholder light-shaded"></div>
               </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
+
+              <div className="item-placeholder">
+                <div className="icon-placeholder-small light-shaded"></div>
+                <div className="text-placeholder light-shaded"></div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div className="skeleton-main">
+      <div className="skeleton-header">
+        <div
+          className="menu-icon"
+          style={{ width: '24px', marginLeft: '20px', marginRight: 'auto' }}
+        >
+          <div
+            className="text-placeholder dark-shaded"
+            style={{ height: '3px', marginBottom: '3px' }}
+          ></div>
+          <div
+            className="text-placeholder dark-shaded"
+            style={{ height: '3px', marginBottom: '3px' }}
+          ></div>
+          <div
+            className="text-placeholder dark-shaded"
+            style={{ height: '3px', marginBottom: '3px' }}
+          ></div>
+          <div
+            className="text-placeholder dark-shaded"
+            style={{ height: '3px', marginBottom: '3px' }}
+          ></div>
+        </div>
+        <div className="profile-menu-icon">
+          <div
+            className="text-placeholder dark-shaded"
+            style={{ width: '60px', float: 'left', marginRight: '4px' }}
+          ></div>
+          <div
+            className="icon-placeholder-small dark-shaded"
+            style={{
+              width: '40px',
+              height: '40px',
+              float: 'left',
+              marginRight: '20px',
+            }}
+          ></div>
+        </div>
+      </div>
+      <div className="skeleton-main-container">
+        <div
+          className="text-placeholder light-shaded"
+          style={{
+            maxWidth: '600px',
+            textAlign: 'center',
+            height: '30px',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '10px',
+            marginRight: 'auto',
+            marginLeft: 'auto',
+          }}
+        >
+          Hello User! Please wait a while, we are just working to verify your
+          details...
+        </div>
+      </div>
+      <div className="skeleton-footer">
+        <div
+          className="text-placeholder dark-shaded"
+          style={{
+            width: '200px',
+            float: 'left',
+            marginRight: '4px',
+            flexGrow: 'inherit',
+          }}
+        ></div>
       </div>
     </div>
   </div>

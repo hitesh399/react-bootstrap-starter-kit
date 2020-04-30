@@ -3,8 +3,10 @@
   &.sidebar-open {
     .main-content {
       margin-left: $sidebar-width;
+      overflow-x: hidden;
     }
     .main-sidebar {
+      height: auto;
       margin-left: 0;
     }
   }
@@ -13,7 +15,15 @@
       margin-left: $sidebar-mini-width;
     }
     .main-sidebar {
+      height: auto;
       margin-left: 0;
+      
+    }
+  }
+  &.sidebar-close {
+    .main-sidebar {
+      overflow-y: hidden;
+      height: 100vh;
     }
   }
   .main-content {
